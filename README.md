@@ -86,19 +86,5 @@ go run main.go
 - JWT authentication for API security
 - Environment variable-based configuration management
 
-## License
-
-This project is licensed under the MIT License.
 
 
-
-
-
-
-Generate Proto Files
- Run the following command to manually generate proto files:
-protoc --proto_path=proto --go_out=protobuf --go_opt=paths=source_relative --go-grpc_out=protobuf --go-grpc_opt=paths=source_relative proto/employee proto
-
-
-run project by using 
-/Documents/GoLang Projects/SecureAPIWithgrpc/grpcAPI :-go run main.go this command 
