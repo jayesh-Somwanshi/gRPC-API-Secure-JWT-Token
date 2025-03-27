@@ -10,7 +10,7 @@ import (
 	"os"
 	"os/exec"
 
-	pb "SecureAPIWithgrpc/grpcAPI/protobuf"
+	pb "SecureAPIWithgrpc/grpcAPI/protobuf" // Protobuf file path
 
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"

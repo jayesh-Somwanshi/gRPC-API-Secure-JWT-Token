@@ -2,6 +2,8 @@
 
 SecureAPIWithgrpc is a Go-based project that implements a secure API using gRPC. It includes authentication, authorization, and CRUD operations while following an MVC structure.
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
 ## Features
 
 - Secure authentication and authorization using JWT
@@ -9,6 +11,8 @@ SecureAPIWithgrpc is a Go-based project that implements a secure API using gRPC.
 - Uses gRPC for efficient communication
 - MySQL database integration
 - Structured project layout following best practices
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Project Structure
 
@@ -33,6 +37,7 @@ SecureAPIWithgrpc/
 ├── go.sum                        # Dependency tracking file
 ├── README.md                     # Project documentation
 ```
+-----------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Running the Project
 ### Option 1
@@ -44,6 +49,8 @@ SecureAPIWithgrpc/
    ```bash
    go run main.go
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
 ## Installation & Setup
 
 ### Prerequisites
@@ -52,18 +59,22 @@ SecureAPIWithgrpc/
 - MySQL
 - Protobuf compiler
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
 ### Clone the repository
 
 ```sh
 git clone https://github.com/yourusername/SecureAPIWithgrpc.git
 cd SecureAPIWithgrpc
 ```
+-----------------------------------------------------------------------------------------------------------------------------------------------------
 
 ### Install dependencies
 
 ```sh
 go mod tidy
 ```
+-----------------------------------------------------------------------------------------------------------------------------------------------------
 
 #### Option 1: Using `protoc`(Create the Protobuf Folder)
 1. Navigate to the `SecureAPIWithgrpc/grpcAPI` directory:
@@ -79,18 +90,20 @@ go mod tidy
        $$proto_file; \
    done
    ```
+-----------------------------------------------------------------------------------------------------------------------------------------------------
 
 ### Configure MySQL Database
 
 Update `database/database.go` with your MySQL credentials.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
 
 ### Run the application
 
 ```sh  
 go run main.go
 ```
-
-## API Endpoints
+-----------------------------------------------------------------------------------------------------------------------------------------------------
 
 ### gRPC Services
 
@@ -100,10 +113,58 @@ go run main.go
 - `UpdateEmployee`
 - `DeleteEmployee`
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
 ## Security
 
 - JWT authentication for API security
 - Environment variable-based configuration management
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+## API Endpoints (gRPC UI Testing)
+
+### 1. Login (Generate Token)
+- **Select:** `Login`
+- **Enter Credentials:**
+  - **Username** (string)
+  - **Password** (string)
+
+
+### 2. Create Employee
+- **Select:** `CreateEmployee`
+- **Headers:**
+  - **Name:** `authorization` (Hardcoded in code)
+  - **Value:** `<generated_token>`
+- **Enter Employee Details:**
+  - **Name** (string)
+  - **Age** (int32)
+  - **Position** (string)
+
+### 3. Delete Employee
+- **Select:** `DeleteEmployee`
+- **Headers:**
+  - **Name:** `authorization` (Hardcoded in code)
+  - **Value:** `<generated_token>`
+- **Enter Employee ID:**
+  - **ID** (uint32)
+
+### 4. Get All Employees
+- **Select:** `GetAllEmployees`
+- **Headers:**
+  - **Name:** `authorization` (Hardcoded in code)
+  - **Value:** `<generated_token>`
+
+### 5. Get Employee By ID
+- **Select:** `GetEmployeesByID`
+- **Headers:**
+  - **Name:** `authorization` (Hardcoded in code)
+  - **Value:** `<generated_token>`
+- **Enter Employee ID:**
+  - **ID** (uint32)
+
+## Security Notes
+- Always include the `authorization` header with the JWT token for secured endpoints.
+- Ensure that the token is valid and has not expired.
+- Store tokens securely and do not expose them in client-side code.
 
 
