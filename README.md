@@ -61,16 +61,8 @@ SecureAPIWithgrpc/
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------
 
-### Clone the repository
-
-```sh
-git clone https://github.com/yourusername/SecureAPIWithgrpc.git
-cd SecureAPIWithgrpc
-```
------------------------------------------------------------------------------------------------------------------------------------------------------
-
 ### Install dependencies
-
+The go mod tidy command is used in Go projects to clean up and optimize the go.mod and go.sum
 ```sh
 go mod tidy
 ```
@@ -94,7 +86,7 @@ go mod tidy
 
 ### Configure MySQL Database
 
-Update `database/database.go` with your MySQL credentials.
+Update `config/database.go` with your MySQL credentials.
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------
 
